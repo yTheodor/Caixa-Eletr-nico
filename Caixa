@@ -1,0 +1,33 @@
+saldo = 1000
+
+while True:
+    print("\n==== Caixa Eletrônico ====")
+    print("1 - Ver saldo")
+    print("2 - Depositar")
+    print("3 - Sacar")
+    print("4 - Sair")
+    
+    option = input("Escolha uma opção: ")
+    
+    if option == "1":
+        print(f"Seu saldo atual é: R${saldo:.2f}")
+    
+    elif option == "2":
+        valor = float(input("Digite o valor para depositar: "))
+        saldo += valor
+        print(f"Depósito de R${valor:.2f} realizado com sucesso.")
+    
+    elif option == "3":
+        valor = float(input("Digite o valor para sacar: "))
+        if valor <= saldo:
+            saldo -= valor
+            print(f"Saque de R${valor:.2f} realizado com sucesso.")
+        else:
+            print("Saldo insuficiente.")
+    
+    elif option == "4":
+        print("Saindo... Obrigado por usar nosso banco!")
+        break
+    
+    else:
+        print("Opção inválida. Tente novamente.")
